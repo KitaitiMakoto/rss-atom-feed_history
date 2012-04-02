@@ -4,9 +4,9 @@ require File.expand_path('../lib/rss/atom/feed_history/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["KITAITI Makoto"]
   gem.email         = ["KitaitiMakoto@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
-  gem.homepage      = ""
+  gem.description   = %q{Enables standard bundled RSS library parse and make feeds including "Feed Paging and Archiving"(RFC 5005).}
+  gem.summary       = %q{Feed Paging and Archiving support for standard bundled RSS library}
+  gem.homepage      = "https://gitorious.org/rss/atom-feed_history"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
