@@ -1,6 +1,8 @@
-# Rss::Atom::FeedHistory
+# RSS::Atom::FeedHistory
 
-TODO: Write a gem description
+Enables standard bundled RSS library parse and make feeds including "[Feed Paging and Archiving][RFC5005]."
+
+[RFC5005]:http://www.ietf.org/rfc/rfc5005.txt
 
 ## Installation
 
@@ -18,7 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+    require 'rss/atom/feed_history'
+    
+    feed = RSS::Parser.parse uri
+    feed.fh_complete # => RSS::Atom::FeedHistory::Complete object
 
 ## Contributing
 
@@ -26,4 +31,4 @@ TODO: Write usage instructions here
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Added some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+5. Create new Merge Request
