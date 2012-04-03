@@ -24,6 +24,7 @@ Or install it yourself as:
     
     feed = RSS::Parser.parse uri
     feed.complete? # => true when the feed includes <fh:complete/>
+    arch = open(feed.previous_archive_page) if feed.archived?
 
 ## Contributing
 
