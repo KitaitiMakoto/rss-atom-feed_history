@@ -11,6 +11,7 @@ module RSS
         'archive'
       ]
       PAGED_FEED_RELS = ['first', 'last', 'previous', 'next']
+      ARCHIVED_FEED_RELS = ['prev-archive', 'next-archive', 'current']
 
       class << self
         def included(klass)
@@ -33,8 +34,9 @@ module RSS
         links.any? {|link| FeedHistory::PAGED_FEED_RELS.include? link.rel}
       end
 
-      PAGED_FEED_RELS.each do |rel|
-        define_method("#{rel}_page") do
+      (PAGED_FEED_RELS + ARCHIVED_FEED_RELS).each do |rel|
+        method_name = "#{rel}_page".gsub(/-/, '_')
+        define_method(method_name) do
           if link = links.find {|link| link.rel == rel}
             link.href
           end
