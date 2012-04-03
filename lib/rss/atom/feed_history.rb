@@ -72,9 +72,5 @@ module RSS
         BaseListener.install_class_name(URI, name, Utils.to_class_name(name))
       end
     end
-
-    class Feed
-      include FeedHistory
-    end
   end
 end
