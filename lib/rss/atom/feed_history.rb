@@ -26,12 +26,12 @@ module RSS
         !!fh_complete
       end
       
-      def archived?
-        !!fh_archive
-      end
-
       def paged?
         links.any? {|link| FeedHistory::PAGED_FEED_RELS.include? link.rel}
+      end
+
+      def archived?
+        !!fh_archive
       end
 
       (PAGED_FEED_RELS + ARCHIVED_FEED_RELS).each do |rel|
