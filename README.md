@@ -20,10 +20,10 @@ Or install it yourself as:
 
 ## Usage
 
-    require 'rss/atom/feed_history'
+    require 'rss/atom/feed_history/atom'
     
     feed = RSS::Parser.parse uri
-    feed.fh_complete # => RSS::Atom::FeedHistory::Complete object
+    feed.complete? # => true when the feed includes <fh:complete/>
 
 ## Contributing
 
