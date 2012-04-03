@@ -20,6 +20,14 @@ module RSS
         end
       end
 
+      def complete?
+        !!fh_complete
+      end
+      
+      def archived?
+        !!fh_archive
+      end
+
       ELEMENTS.each do |name|
         module_eval(<<-EOC, *Utils.get_file_and_line_from_caller(0))
           class #{Utils.to_class_name(name)} < Element
