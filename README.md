@@ -1,10 +1,12 @@
-# RSS::Atom::FeedHistory
+RSS::Atom::FeedHistory
+======================
 
 Enables standard bundled RSS library parse and make feeds including "[Feed Paging and Archiving][RFC5005]."
 
 [RFC5005]:http://www.ietf.org/rfc/rfc5005.txt
 
-## Installation
+Installation
+------------
 
 Add this line to your application's Gemfile:
 
@@ -18,7 +20,8 @@ Or install it yourself as:
 
     $ gem install rss-atom-feed_history
 
-## Usage
+Usage
+-----
 
     require 'rss/atom/feed_history/atom'
     
@@ -26,7 +29,8 @@ Or install it yourself as:
     feed.complete? # => true when the feed includes <fh:complete/>
     arch = open(feed.previous_archive_page) if feed.archived?
 
-## Contributing
+Contributing
+------------
 
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
