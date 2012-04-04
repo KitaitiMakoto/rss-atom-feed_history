@@ -35,7 +35,7 @@ module RSS
       end
 
       (PAGED_FEED_RELS + ARCHIVED_FEED_RELS).each do |rel|
-        method_name = "#{rel}_page".gsub(/-/, '_')
+        method_name = rel.gsub(/-/, '_') + '_page'
         define_method(method_name) do
           if link = links.find {|link| link.rel == rel}
             link.href
