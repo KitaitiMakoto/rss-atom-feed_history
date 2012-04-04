@@ -66,7 +66,7 @@ module RSS
 
             def to_s(need_conevert=true, indent='')
               # want to use Element#tag method
-              make_start_tag(indent, indent + INDENT, {}) + '/>'
+              make_start_tag(indent, indent + INDENT, collect_attrs) + '/>'
             end
           end
         EOC
