@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["KitaitiMakoto@gmail.com"]
   gem.description   = %q{Enables standard bundled RSS library parse and make feeds including "Feed Paging and Archiving"(RFC 5005).}
   gem.summary       = %q{Feed Paging and Archiving support for standard bundled RSS library}
-  gem.homepage      = "https://gitorious.org/rss/atom-feed_history"
+  gem.homepage      = "http://rss-ext.rubyforge.org/"
 
   gem.files         = `git ls-files`.split($\)
   gem.executables   = gem.files.grep(%r{^bin/}).map{ |f| File.basename(f) }
@@ -18,5 +18,7 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'test-unit'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'yard'
+  gem.add_development_dependency 'redcarpet'
   gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'pry-doc'
 end
