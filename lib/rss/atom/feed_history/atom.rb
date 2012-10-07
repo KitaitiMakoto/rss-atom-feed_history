@@ -1,5 +1,3 @@
-require 'rss/atom/feed_history'
-
 module RSS
   module Atom
     class Feed
