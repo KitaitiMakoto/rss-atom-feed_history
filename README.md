@@ -23,7 +23,7 @@ Or install it yourself as:
 Usage
 -----
 
-    require 'rss/atom/feed_history/atom'
+    require 'rss/atom/feed_history'
     
     feed = RSS::Parser.parse uri
     feed.complete? # => true when the feed includes <fh:complete/>

@@ -76,3 +76,5 @@ module RSS
     end
   end
 end
+
+require 'rss/atom/feed_history/atom'
