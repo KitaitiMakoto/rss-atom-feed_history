@@ -22,11 +22,8 @@ module RSS
             # This is a dirty redifinition. Should define writer type `:feed_history` and pass it to `install_have_child_element`?
             klass.module_eval(<<-EOC, __FILE__, __LINE__ + 1)
               def #{full_name}_element(need_convert=true, indent='')
-                if @#{full_name}
-                  Atom::FeedHistory::#{Utils.to_class_name(name)}.new.to_s(need_convert, indent)
-                else
-                  ''
-                end
+                return '' unless @#{full_name}
+                Atom::FeedHistory::#{Utils.to_class_name(name)}.new.to_s(need_convert, indent)
               end
             EOC
           end
