@@ -14,8 +14,8 @@ class TestFeedHistory < Test::Unit::TestCase
     end
 
     def test_set_fh_element
-      complete_feed = make_feed {|maker| maker.channel.fh_complete = true}
-      doc = REXML::Document.new(complete_feed.to_s)
+      feed = make_feed {|maker| maker.channel.fh_complete = true}
+      doc = REXML::Document.new(feed.to_s)
       fh_elements = REXML::XPath.match(doc, "//*[namespace-uri()='#{@uri}']")
       assert_not_empty fh_elements
     end
@@ -28,18 +28,18 @@ class TestFeedHistory < Test::Unit::TestCase
     end
 
     def test_set_archive
-      complete_feed = make_feed {|maker| maker.channel.fh_archive = true}
-      doc = REXML::Document.new(complete_feed.to_s)
+      archive_feed = make_feed {|maker| maker.channel.fh_archive = true}
+      doc = REXML::Document.new(archive_feed.to_s)
       archive_element = REXML::XPath.first(doc, "//*[namespace-uri()='#{@uri}'][local-name()='archive']")
       assert_equal '<fh:archive/>', archive_element.to_s
     end
 
     def test_unset_complete
-      complete_feed = make_feed {|maker|
+      non_complete_feed = make_feed {|maker|
         maker.channel.fh_complete = false
         maker.channel.fh_archive = true
       }
-      doc = REXML::Document.new(complete_feed.to_s)
+      doc = REXML::Document.new(non_complete_feed.to_s)
       complete_element = REXML::XPath.first(doc, "//*[namespace-uri()='#{@uri}'][local-name()='complete']")
       assert_nil complete_element
     end
