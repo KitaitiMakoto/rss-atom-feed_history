@@ -9,7 +9,10 @@ module RSS
           def append_features(klass)
             super
 
-            klass.def_other_element 'fh_complete'
+            ::RSS::Atom::FeedHistory::ELEMENTS.each do |name|
+              full_name = "#{::RSS::Atom::FeedHistory::PREFIX}_#{name}"
+              klass.def_other_element full_name
+            end
           end
         end
       end
