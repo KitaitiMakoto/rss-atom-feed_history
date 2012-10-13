@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
   gem.version       = RSS::Atom::FeedHistory::VERSION
 
-  gem.add_development_dependency 'test-unit'
+  gem.add_development_dependency 'test-unit-full'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'yard'
   gem.add_development_dependency 'redcarpet'
